@@ -53,13 +53,29 @@ function pageScrollFunction(){
 		homeSection.classList.remove('active');
 	}
 }
-// let Section = document.querySelector(".skills-contents");
-// let pro = document.querySelectorAll(".progress-value");
-// window.onscroll=function(){
-// 	if(window.scrollY>=Section.offsetTop){
-// 		pro.forEach((p) => {
-// 			p.value=p.dataset.width;
-// 			p.style.width=p.dataset.width;
-// 		});
-// 	}
-// }
+var Sec = document.querySelector(".skills-contents");
+
+window.onscroll=function(){
+	var progressBars = Sec.getElementsByClassName("progress-value");
+
+	if(isElementInViewport(Sec)){
+		for (var i = 0; i < progressBars.length; i++) {
+			var progressBar = progressBars[i];
+			var width = progressBar.getAttribute("value");
+			progressBar.style.width=width;
+		}
+	}else{
+		for (var i = 0; i < progressBars.length; i++) {
+			var progressBar = progressBars[i];
+			var width = progressBar.getAttribute("value");
+			progressBar.style.width=0;
+		}
+	}
+}
+
+function isElementInViewport(element) {
+	var rect = element.getBoundingClientRect();
+	var windowHeight = window.innerHeight || document.documentElement.clientHeight;
+	return (rect.top >= 0 && rect.bottom <= windowHeight);
+}
+
