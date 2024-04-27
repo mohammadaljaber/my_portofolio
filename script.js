@@ -54,11 +54,12 @@ function pageScrollFunction(){
 	}
 }
 // let Section = document.querySelector(".skills-contents");
-// let pro = document.querySelector(".progress-value");
+// let pro = document.querySelectorAll(".progress-value");
 // window.onscroll=function(){
 // 	if(window.scrollY>=Section.offsetTop){
 // 		pro.forEach((p) => {
-// 			p.style.value=p.dataset.width;
+// 			p.value=p.dataset.width;
+// 			p.style.width=p.dataset.width;
 // 		});
 // 	}
 // }
