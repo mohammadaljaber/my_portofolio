@@ -53,3 +53,12 @@ function pageScrollFunction(){
 		homeSection.classList.remove('active');
 	}
 }
+// let Section = document.querySelector(".skills-contents");
+// let pro = document.querySelector(".progress-value");
+// window.onscroll=function(){
+// 	if(window.scrollY>=Section.offsetTop){
+// 		pro.forEach((p) => {
+// 			p.style.value=p.dataset.width;
+// 		});
+// 	}
+// }
